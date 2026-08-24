@@ -513,6 +513,12 @@ repository:
         name: punctuation.definition.interpolation.rust
       2:
         name: punctuation.definition.interpolation.rust
+  format-escapes:
+    patterns:
+      -
+        comment: escaped format string braces
+        name: constant.character.escape.format.rust
+        match: '\{\{|\}\}'
   lifetimes:
     patterns:
       -
@@ -677,6 +683,7 @@ repository:
             name: punctuation.definition.string.rust
         patterns:
           - include: '#escapes'
+          - include: '#format-escapes'
           - include: '#interpolations'
       -
         comment: double-quoted raw strings and raw byte strings
