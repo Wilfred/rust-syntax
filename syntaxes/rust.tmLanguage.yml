@@ -663,9 +663,9 @@ repository:
   strings:
     patterns:
       -
-        comment: double-quoted strings and byte strings
+        comment: double-quoted strings, byte strings, and C strings
         name: string.quoted.double.rust
-        begin: '(b?)(")'
+        begin: '([bc]?)(")'
         beginCaptures:
           1:
             name: string.quoted.byte.raw.rust
@@ -679,9 +679,9 @@ repository:
           - include: '#escapes'
           - include: '#interpolations'
       -
-        comment: double-quoted raw strings and raw byte strings
+        comment: double-quoted raw strings, raw byte strings, and raw C strings
         name: string.quoted.double.rust
-        begin: '(b?r)(#*)(")'
+        begin: '([bc]?r)(#*)(")'
         beginCaptures:
           1:
             name: string.quoted.byte.raw.rust
