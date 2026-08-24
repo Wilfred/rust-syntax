@@ -7,6 +7,13 @@ fileTypes:
 scopeName: source.rust
 patterns:
   -
+    comment: shebang
+    name: comment.line.shebang.rust
+    match: \A(#!)(?!\s*\[).*$
+    captures:
+      1:
+        name: punctuation.definition.comment.rust
+  -
     comment: boxed slice literal
     begin: (<)(\[)
     beginCaptures:

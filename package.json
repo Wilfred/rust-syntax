@@ -10,7 +10,8 @@
     },
     "scripts": {
         "start": "npx gulp watch-yaml",
-        "test": "npm run test-TM-scope",
+        "test": "npm run test-TM-scope && npm run test-TM-snap",
+        "test-TM-snap": "vscode-tmgrammar-snap \"./test/shebang.rs\" --grammar ./syntaxes/rust.tmLanguage.json --scope source.rust",
         "test-TM-scope": "npx vscode-tmgrammar-test \"./test/**/test*.rs\" --compact --grammar ./syntaxes/rust.tmLanguage.json"
     },
     "repository": {
