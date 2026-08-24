@@ -594,7 +594,7 @@
                     "begin": "((?:r#(?!crate|[Ss]elf|super))?[A-Za-z0-9_]+)(\\()",
                     "beginCaptures": {
                         "1": {
-                            "name": "entity.name.function.rust"
+                            "name": "variable.function.rust"
                         },
                         "2": {
                             "name": "punctuation.brackets.round.rust"
@@ -660,7 +660,7 @@
                     "begin": "((?:r#(?!crate|[Ss]elf|super))?[A-Za-z0-9_]+)(?=::<.*>\\()",
                     "beginCaptures": {
                         "1": {
-                            "name": "entity.name.function.rust"
+                            "name": "variable.function.rust"
                         }
                     },
                     "end": "\\)",
