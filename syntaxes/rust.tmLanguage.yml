@@ -268,14 +268,6 @@ repository:
           1:
             name: storage.modifier.visibility.rust
       -
-        comment: pub visibility modifier with restrictions
-        match: \b(pub)(\()
-        captures:
-          1:
-            name: storage.modifier.visibility.rust
-          2:
-            name: punctuation.brackets.round.rust
-      -
         comment: function definition
         name: meta.function.definition.rust
         begin: \b(fn)\s+((?:r#(?!crate|[Ss]elf|super))?[A-Za-z0-9_]+)((\()|(<))
