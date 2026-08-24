@@ -519,19 +519,13 @@
                 {
                     "comment": "function definition",
                     "name": "meta.function.definition.rust",
-                    "begin": "\\b(fn)\\s+((?:r#(?!crate|[Ss]elf|super))?[A-Za-z0-9_]+)((\\()|(<))",
+                    "begin": "\\b(fn)\\s+((?:r#(?!crate|[Ss]elf|super))?[A-Za-z0-9_]+)(?=\\s*(?:\\(|<))",
                     "beginCaptures": {
                         "1": {
                             "name": "keyword.other.fn.rust"
                         },
                         "2": {
                             "name": "entity.name.function.rust"
-                        },
-                        "4": {
-                            "name": "punctuation.brackets.round.rust"
-                        },
-                        "5": {
-                            "name": "punctuation.brackets.angle.rust"
                         }
                     },
                     "end": "(\\{)|(;)",
@@ -549,6 +543,9 @@
                         },
                         {
                             "include": "#comments"
+                        },
+                        {
+                            "include": "#function-parameters"
                         },
                         {
                             "include": "#keywords"
@@ -716,6 +713,73 @@
                             "include": "#variables"
                         }
                     ]
+                }
+            ]
+        },
+        "function-parameters": {
+            "comment": "function parameters",
+            "begin": "\\(",
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.brackets.round.rust"
+                }
+            },
+            "end": "\\)",
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.brackets.round.rust"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#block-comments"
+                },
+                {
+                    "include": "#comments"
+                },
+                {
+                    "include": "#attributes"
+                },
+                {
+                    "include": "#function-parameters"
+                },
+                {
+                    "include": "#lvariables"
+                },
+                {
+                    "comment": "named function parameters",
+                    "name": "variable.parameter.rust",
+                    "match": "(?<![A-Za-z0-9_'])(?:r#(?!crate|[Ss]elf|super))?(?!_\\b)[A-Za-z_][A-Za-z0-9_]*\\b(?=\\s*:)"
+                },
+                {
+                    "include": "#keywords"
+                },
+                {
+                    "include": "#constants"
+                },
+                {
+                    "include": "#gtypes"
+                },
+                {
+                    "include": "#lifetimes"
+                },
+                {
+                    "include": "#macros"
+                },
+                {
+                    "include": "#namespaces"
+                },
+                {
+                    "include": "#punctuation"
+                },
+                {
+                    "include": "#strings"
+                },
+                {
+                    "include": "#types"
+                },
+                {
+                    "include": "#variables"
                 }
             ]
         },
