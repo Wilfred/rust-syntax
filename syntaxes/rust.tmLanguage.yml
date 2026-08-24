@@ -255,10 +255,12 @@ repository:
       - include: '#comments'
       - include: '#keywords'
       - include: '#lifetimes'
+      - include: '#constants'
       - include: '#punctuation'
       - include: '#strings'
       - include: '#gtypes'
       - include: '#types'
+      - include: '#variables'
   functions:
     patterns:
       -

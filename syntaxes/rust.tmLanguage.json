@@ -435,6 +435,9 @@
                     "include": "#lifetimes"
                 },
                 {
+                    "include": "#constants"
+                },
+                {
                     "include": "#punctuation"
                 },
                 {
@@ -445,6 +448,9 @@
                 },
                 {
                     "include": "#types"
+                },
+                {
+                    "include": "#variables"
                 }
             ]
         },
