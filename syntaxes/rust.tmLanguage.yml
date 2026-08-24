@@ -310,6 +310,10 @@ repository:
           - include: '#types'
           - include: '#variables'
       -
+        comment: tuple struct and enum variant constructors
+        name: entity.name.type.rust
+        match: \b_?[A-Z][A-Za-z0-9_]*(?=\()
+      -
         # todo: capitalized functions in most cases represent enum members or tuple structs
         # separate these out and color them accordingly
         # this has to be done without breaking struct scoping when the struct keyword is used:

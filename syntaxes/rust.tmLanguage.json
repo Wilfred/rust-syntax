@@ -544,6 +544,11 @@
                     ]
                 },
                 {
+                    "comment": "tuple struct and enum variant constructors",
+                    "name": "entity.name.type.rust",
+                    "match": "\\b_?[A-Z][A-Za-z0-9_]*(?=\\()"
+                },
+                {
                     "comment": "function/method calls, chaining",
                     "name": "meta.function.call.rust",
                     "begin": "((?:r#(?!crate|[Ss]elf|super))?[A-Za-z0-9_]+)(\\()",
