@@ -737,6 +737,21 @@
                     "match": "\\bmut\\b"
                 },
                 {
+                    "comment": "raw borrow operators",
+                    "match": "(&)(\\s*)(raw)\\s+(const|mut)\\b",
+                    "captures": {
+                        "1": {
+                            "name": "keyword.operator.borrow.and.rust"
+                        },
+                        "3": {
+                            "name": "keyword.operator.borrow.raw.rust"
+                        },
+                        "4": {
+                            "name": "storage.modifier.rust"
+                        }
+                    }
+                },
+                {
                     "comment": "logical operators",
                     "name": "keyword.operator.logical.rust",
                     "match": "(\\^|\\||\\|\\||&&|<<|>>|!)(?!=)"
