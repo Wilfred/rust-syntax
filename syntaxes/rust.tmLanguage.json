@@ -67,12 +67,7 @@
                 "7": {
                     "name": "variable.other.metavariable.specifier.rust"
                 }
-            },
-            "patterns": [
-                {
-                    "include": "#keywords"
-                }
-            ]
+            }
         },
         {
             "comment": "macro metavariables",
@@ -91,12 +86,7 @@
                 "5": {
                     "name": "variable.other.metavariable.specifier.rust"
                 }
-            },
-            "patterns": [
-                {
-                    "include": "#keywords"
-                }
-            ]
+            }
         },
         {
             "comment": "macro rules",

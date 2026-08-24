@@ -41,8 +41,6 @@ patterns:
         name: keyword.operator.key-value.rust
       7:
         name: variable.other.metavariable.specifier.rust
-    patterns:
-      - include: '#keywords'
   -
     comment: macro metavariables
     name: meta.macro.metavariable.rust
@@ -56,8 +54,6 @@ patterns:
         name: keyword.operator.key-value.rust
       5:
         name: variable.other.metavariable.specifier.rust
-    patterns:
-      - include: '#keywords'
   -
     comment: macro rules
     name: meta.macro.rules.rust
