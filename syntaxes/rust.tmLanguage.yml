@@ -135,9 +135,16 @@ repository:
   comments:
     patterns:
       -
-        comment: documentation comments
+        comment: outer documentation comments
         name: comment.line.documentation.rust
-        match: (///).*$
+        match: (///)(?!/).*$
+        captures:
+          1:
+            name: punctuation.definition.comment.rust
+      -
+        comment: inner documentation comments
+        name: comment.line.documentation.rust
+        match: (//!).*$
         captures:
           1:
             name: punctuation.definition.comment.rust
@@ -157,14 +164,14 @@ repository:
       -
         comment: block documentation comments
         name: comment.block.documentation.rust
-        begin: /\*\*
+        begin: /(?:\*\*(?!\*)|\*!)
         end: \*/
         patterns:
           - include: '#block-comments'
       -
         comment: block comments
         name: comment.block.rust
-        begin: /\*(?!\*)
+        begin: /\*(?=\*)|/\*(?![*!])
         end: \*/
         patterns:
           - include: '#block-comments'
