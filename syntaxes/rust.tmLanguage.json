@@ -719,7 +719,7 @@
                 {
                     "comment": "other keywords",
                     "name": "keyword.other.rust",
-                    "match": "\\b(as|async|become|box|dyn|move|final|gen|impl|in|override|priv|ref|typeof|union|unsafe|unsized|use|virtual|where)\\b"
+                    "match": "\\b(as|async|become|box|dyn|move|final|gen|impl|in|override|priv|ref|typeof|unsafe|unsized|use|virtual|where)\\b"
                 },
                 {
                     "comment": "fn",
@@ -1007,6 +1007,18 @@
                         },
                         "2": {
                             "name": "entity.name.type.struct.rust"
+                        }
+                    }
+                },
+                {
+                    "comment": "union declarations",
+                    "match": "\\b(union)\\s+(_?[A-Z][A-Za-z0-9_]*)\\b",
+                    "captures": {
+                        "1": {
+                            "name": "keyword.declaration.union.rust storage.type.rust"
+                        },
+                        "2": {
+                            "name": "entity.name.type.union.rust"
                         }
                     }
                 },
