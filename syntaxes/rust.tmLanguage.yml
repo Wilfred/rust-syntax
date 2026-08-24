@@ -548,7 +548,7 @@ repository:
     patterns:
       -
         comment: namespace (non-type, non-function path segment)
-        match: (?<![A-Za-z0-9_])([A-Za-z0-9_]+)((?<!super|self)::)
+        match: (?<![A-Za-z0-9_])((?!(?:super|self)::)[A-Za-z0-9_]+)(::)
         captures:
           1:
             name: entity.name.namespace.rust
