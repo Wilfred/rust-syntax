@@ -1097,7 +1097,7 @@
                     "begin": "(b?)(\")",
                     "beginCaptures": {
                         "1": {
-                            "name": "string.quoted.byte.raw.rust"
+                            "name": "string.quoted.byte.rust"
                         },
                         "2": {
                             "name": "punctuation.definition.string.rust"
@@ -1121,19 +1121,22 @@
                 {
                     "comment": "double-quoted raw strings and raw byte strings",
                     "name": "string.quoted.double.rust",
-                    "begin": "(b?r)(#*)(\")",
+                    "begin": "(b?)(r)(#*)(\")",
                     "beginCaptures": {
                         "1": {
-                            "name": "string.quoted.byte.raw.rust"
+                            "name": "string.quoted.byte.rust"
                         },
                         "2": {
-                            "name": "punctuation.definition.string.raw.rust"
+                            "name": "string.quoted.raw.rust"
                         },
                         "3": {
+                            "name": "punctuation.definition.string.raw.rust"
+                        },
+                        "4": {
                             "name": "punctuation.definition.string.rust"
                         }
                     },
-                    "end": "(\")(\\2)",
+                    "end": "(\")(\\3)",
                     "endCaptures": {
                         "1": {
                             "name": "punctuation.definition.string.rust"
@@ -1149,7 +1152,7 @@
                     "begin": "(b)?(')",
                     "beginCaptures": {
                         "1": {
-                            "name": "string.quoted.byte.raw.rust"
+                            "name": "string.quoted.byte.rust"
                         },
                         "2": {
                             "name": "punctuation.definition.char.rust"
