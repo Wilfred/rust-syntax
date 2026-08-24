@@ -968,6 +968,9 @@
                             "include": "#lvariables"
                         },
                         {
+                            "include": "#constants"
+                        },
+                        {
                             "include": "#lifetimes"
                         },
                         {

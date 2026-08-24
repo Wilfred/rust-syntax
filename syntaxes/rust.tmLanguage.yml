@@ -579,6 +579,7 @@ repository:
           - include: '#comments'
           - include: '#keywords'
           - include: '#lvariables'
+          - include: '#constants'
           - include: '#lifetimes'
           - include: '#punctuation'
           - include: '#types'
