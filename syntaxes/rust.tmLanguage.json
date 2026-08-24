@@ -403,6 +403,19 @@
                 }
             }
         },
+        "byte-escapes": {
+            "comment": "byte escapes",
+            "name": "constant.character.escape.rust",
+            "match": "(\\\\)(?:(x[\\da-fA-F]{2})|.)",
+            "captures": {
+                "1": {
+                    "name": "constant.character.escape.backslash.rust"
+                },
+                "2": {
+                    "name": "constant.character.escape.bit.rust"
+                }
+            }
+        },
         "attributes": {
             "comment": "attributes",
             "name": "meta.attribute.rust",
@@ -1092,6 +1105,33 @@
         "strings": {
             "patterns": [
                 {
+                    "comment": "byte strings",
+                    "name": "string.quoted.double.rust",
+                    "begin": "(b)(\")",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "string.quoted.byte.raw.rust"
+                        },
+                        "2": {
+                            "name": "punctuation.definition.string.rust"
+                        }
+                    },
+                    "end": "\"",
+                    "endCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.string.rust"
+                        }
+                    },
+                    "patterns": [
+                        {
+                            "include": "#byte-escapes"
+                        },
+                        {
+                            "include": "#interpolations"
+                        }
+                    ]
+                },
+                {
                     "comment": "double-quoted strings and byte strings",
                     "name": "string.quoted.double.rust",
                     "begin": "(b?)(\")",
@@ -1142,6 +1182,30 @@
                             "name": "punctuation.definition.string.raw.rust"
                         }
                     }
+                },
+                {
+                    "comment": "bytes",
+                    "name": "string.quoted.single.char.rust",
+                    "begin": "(b)(')",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "string.quoted.byte.raw.rust"
+                        },
+                        "2": {
+                            "name": "punctuation.definition.char.rust"
+                        }
+                    },
+                    "end": "'",
+                    "endCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.char.rust"
+                        }
+                    },
+                    "patterns": [
+                        {
+                            "include": "#byte-escapes"
+                        }
+                    ]
                 },
                 {
                     "comment": "characters and bytes",
